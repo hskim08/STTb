@@ -1,7 +1,7 @@
 function [newEnvs, snrs, iterEnvs, envsMSA, envs] = synthesizeEnvelopes( synthSound, stats, ...
     synthParams, analysisParams, filterBundle )
 %
-% Synthesizes sound texture envelopes form sound texture statistics.
+% Synthesizes sound texture envelopes from sound texture statistics.
 %
 
 % generate subbands
