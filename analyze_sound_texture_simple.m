@@ -51,8 +51,15 @@ filterBundle = generateFilterBundle( analysisParams, nSamples );
     filterBundle );
 
 % 4. Calculate statistics
-stats = calculateSoundTextureStats( subbands, subbandEnvs, residuals, ...
+stats = calculateSoundTextureStats( subbandEnvs, residuals, ...
     modbands, modbandsC2, analysisParams );
+
+
+%% Save stats to file
+outputFolder = '~/Temp/stats/';
+outFile = [outputFolder files{iFile} '.mat'];
+disp(['Saving to: ' outFile]);
+save(outFile, 'stats');
 
 
 %% Plot statistics
@@ -68,15 +75,6 @@ plotResidualStats( stats.residual, analysisParams.audio_sr, residuals );
 % Modulation Spectra Amplitudes
 figure(2);
 plotModSpecAmps( stats.modSpectraAmps, analysisParams.env_sr );
-
-
-% Modulation Power
-figure(3);
-plotModPowerStats( stats.modPower );
-
-% C1 - Direct correlation
-figure(4);
-plotModC1Stats(stats.modC1, centerFreqs);
 
 % C1 - Analytic signal correlation
 figure(5);

@@ -15,7 +15,7 @@ analysis_parameters;
 synthesis_parameters;
 
 %% Load stats
-statsFolder = '~/Temp/usertest/stats/';
+statsFolder = '~/Temp/stats/';
 
 files = {...
     'rain', 'train', 'bees', 'wind', 'drills' ... % 5
@@ -26,7 +26,7 @@ files = {...
     'ride_low', 'ride_hi', 'drumroll_1', 'drumroll_2', ...
     };
 
-iFile = 5;
+iFile = 19;
 disp( ['Loading stats for ' files{iFile}] );
 
 load([statsFolder files{iFile} '.mat']);
@@ -74,11 +74,6 @@ synthResiduals = synthesizeResiduals( synthSound, ...
 % merge residual and envelopes
 synthSubbands = restoreSubbands( synthEnvs, synthResiduals, ...
     filterBundle.window, analysisParams.compression );
-
-% equalize subbands
-if synthParams.adjustSubbandVars,
-    synthSubbands = adjustSubbands( synthSubbands, stats.subbandVars );
-end
 
 % merge subbands
 synthAudio = collapseSubbands( synthSubbands, filterBundle.audioFilters );

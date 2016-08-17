@@ -121,11 +121,6 @@ modbandsC2 = generateModbands( subbandEnvs, filterBundle.modC2Filters );
 nModbandsC2 = size(modbandsC2, 3);
 
 %
-% Subband variances
-%
-stats.subbandVars = var( subbands );
-
-%
 % Residuals
 %
 [a, g] = lpc( residuals, analysisParams.residual.lpcOrder );
@@ -159,36 +154,8 @@ plotModSpecAmps( stats.modSpectraAmps, env_sr );
 
 
 %%
-% Modulation Power
-%
-stats.modPower = zeros(nSubbands, nModbands);
-for iSubband = 1:nSubbands, % for each subband
-    
-    cursub = subbandEnvs(:, iSubband);
-    
-    % subband envelope statistics 
-    moments = calculateMoments( cursub );
-    
-    % subband modulation power
-    stats.modPower( iSubband, : ) = calculateModPowerStats( squeeze(modbands(:, iSubband, :)), moments );
-end
-
-% plot
-figure(3);
-plotModPowerStats( stats.modPower );
-
-
-%%
 % Between subband (C1) modulation correlations
 %
-
-% Direct correlation
-stats.modC1 = calculateModC1StatsFull( modbands );
-
-% plot
-figure(4);
-plotModC1Stats( stats.modC1, centerFreqs );
-
 
 % Analytic signal correlation
 stats.modC1Analytic = calculateModC1AnalyticStatsFull( modbands );

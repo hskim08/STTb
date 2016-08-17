@@ -7,7 +7,7 @@
 
 
 %% Analysis parameters
-analysisParams.verbose = 1; % 0 --> no messages except warnings; 1 --> messages are displayed
+analysisParams.verbose = 1; % 0 --> no messages; 1 --> messages are displayed
 
 
 % sampling rates

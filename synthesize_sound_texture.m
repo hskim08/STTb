@@ -199,11 +199,6 @@ nFramesAdj = size(synthResiduals, 2);
 synthSubbands = restoreSubbands( newEnvs2, synthResiduals, ...
     filterBundle.window, analysisParams.compression );
 
-% equalize subbands
-if synthParams.adjustSubbandVars,
-    synthSubbands = adjustSubbands( synthSubbands, stats.subbandVars );
-end
-
 synthAudio = collapseSubbands( synthSubbands, filterBundle.audioFilters );
 
 

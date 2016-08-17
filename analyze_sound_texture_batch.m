@@ -53,7 +53,7 @@ for iFile = nFiles, %1:nFiles,
         filterBundle );
 
     % 4. Calculate statistics
-    stats = calculateSoundTextureStats( subbands, subbandEnvs, residuals, ...
+    stats = calculateSoundTextureStats( subbandEnvs, residuals, ...
         modbands, modbandsC2, analysisParams );
 
     % 5. Save stats to file
