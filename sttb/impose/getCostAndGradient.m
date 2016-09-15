@@ -12,13 +12,44 @@ allGrads = [];
 allErrors = [];
 
 % pre-calculate modulation signals
-if imposeParams.modC1Analytic ...
+if imposeParams.modPower ...
+        || imposeParams.modC1 ...
+        || imposeParams.modC1Analytic ...
         || imposeParams.modC2Amp,
     
     modFilter = filters.modFilters;
     
     modSubbands = generateSubbands( currentSubbandEnv, modFilter );
     modSubbands2 = applyFilterParallel( modSubbands, modFilter );
+end
+
+
+% Modulation Power
+if imposeParams.modPower,
+    
+    moments = calculateMoments( currentSubbandEnv );
+
+    [errors, grads] = getModPowerErrorAndGradients( currentSubband, stats, ...
+        modSubbands, modSubbands2, moments );
+
+    allErrors = [allErrors errors];
+    allGrads = [allGrads grads]; 
+end
+
+
+% C1 correlation
+if imposeParams.modC1 ... % mod_C1
+    && ~isempty(modC1BandsToUse),
+
+    % get modulation bands for select subbands
+    corrMods = modBands(:, modC1BandsToUse, :);
+    corrMods2 = modBandsFiltered(:, modC1BandsToUse, :);
+    
+    [errors, grads] = getC1ErrorAndGradients( currentSubband, stats, ...
+        modSubbands, modSubbands2, corrMods, corrMods2, modC1BandsToUse );
+
+    allErrors = [allErrors errors];
+    allGrads = [allGrads grads]; 
 end
 
 

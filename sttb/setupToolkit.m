@@ -1,6 +1,12 @@
-function setupToolkit(verbose)
+function setupToolkit( verbose )
+%setupToolkit   Set paths for the toolkit.
 %
-% Set paths for the toolkit.
+% setupToolkit() adds the paths needed to use the toolbox. The verbose
+% level is set to 1 by default.
+% 
+% setupToolkit( verbose ) adds the paths needed and displays the results
+% depending on the verbosity level. A verbose value of 0 will not show any
+% messages. Setting verbose to 1 will display the paths that were added.
 %  
 
 if ~exist('verbose', 'var'),

@@ -1,6 +1,12 @@
 function decompEnvs = decompressEnvelopes( envs, compressionOptions )
+%decompressEnvelopes    Decompresses envelopes.
 %
-% de-compresses envelopes
+% Parameters:
+% envs - Compressed subband envelopes
+% compressionOptions - Compression options
+%
+% Returns:
+% compEnvs - The decompresed subband envelopes.  
 %
 
 if compressionOptions.type == 1, % power compression

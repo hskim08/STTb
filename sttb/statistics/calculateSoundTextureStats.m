@@ -17,9 +17,16 @@ stats.modSpectraAmps = calculateModSpecAmps( subbandEnvs, ...
 
 
 %
+% Modulation Power
+%
+stats.modPower = calculateModPowerStatsFull( modbands, subbandEnvs );
+
+
+%
 % Between subband (C1) modulation correlations
 %
-
+% Direct correlation
+stats.modC1 = calculateModC1StatsFull( modbands );
 % Analytic signal correlation
 stats.modC1Analytic = calculateModC1AnalyticStatsFull( modbands );
 

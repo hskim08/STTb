@@ -1,7 +1,22 @@
 function [filts,centerFreqs,freqs] = makeOctaveBandFilters( signalLength, sampleRate, ...
     cutoffLow, cutoffHigh, figNum )
+%makeOctaveBandFilters    Makes an Octave spaced filterbank.
+%
+% Parameters:
+% signalLength - The length of the signal to filter.
+% sampleRate - The sampling rate.
+% cutoffLow - The low cutoff frequency.
+% cutoffHigh - The high cutoff frequency.
+% figNum - (Optional) When specified, it will create plots of the filter
+%   with the figure number set to figNum.
+%
+% Returns:
+% filts - The filterbank in the frequency domain.
+% centerFreqs - The center frequencies.
+% freqs - The frequencies for each filter point.
 % 
-% Makes an Octave spaced filterbank.
+% 
+% 
 % 
 % From McDermott et al.
 % 

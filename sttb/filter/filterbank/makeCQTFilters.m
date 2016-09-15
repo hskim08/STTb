@@ -1,7 +1,21 @@
 function [filts, centerFreqs, freqs] = makeCQTFilters( signalLength, sampleRate, ...
     nFilters, cutoffLow, cutoffHigh, Qfactor, figNum )
-% 
-% Makes an Constant Qfactor Transform filterbank.
+%makeCQTFilters    Makes a Constant Qfactor Transform filterbank.
+%
+% Parameters:
+% signalLength - The length of the signal to filter.
+% sampleRate - The sampling rate.
+% nFilters - The number of filters.
+% cutoffLow - The low cutoff frequency.
+% cutoffHigh - The high cutoff frequency.
+% Qfactor - The Q-factor of the filters.
+% figNum - (Optional) When specified, it will create plots of the filter
+%   with the figure number set to figNum.
+%
+% Returns:
+% filts - The filterbank in the frequency domain.
+% centerFreqs - The center frequencies.
+% freqs - The frequencies for each filter point.
 % 
 % From McDermott et al.
 % 

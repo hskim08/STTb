@@ -1,6 +1,15 @@
 function subbands = generateSubbands( signal, filts )
+%generateSubbands    Generate subbands from signal with the given filters.
 %
-% Generate subbands from signal with the given filters.
+% Parameters:
+% signal - A single channel signal
+% filt - The audio filterbank
+%
+% Returns:
+% subband - The subband signal. 
+% 
+% For a filterbank with nSubbands and a signal of length nSamples, the output
+% subband has a size of [nSamples, nSubbands]
 % 
 % From McDermott et al.
 %

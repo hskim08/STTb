@@ -43,7 +43,8 @@ for iSubOrder = 1:nSubOrders, % run through the subbands
     end
     
     % prepare for modC1
-    if imposeParams.modC1Analytic, 
+        if imposeParams.modC1 ...
+            || imposeParams.modC1Analytic, 
         % correlations to be enforced
         potentialBands = c1Offsets + iSubband; 
         modC1BandsToUse = getBandsToUse(iSubOrder, potentialBands, subOrder);
@@ -101,6 +102,16 @@ end
 
 % Evaluate new envelopes
 % TODO: only evaluate actually used values, not the whole matrix.
+if imposeParams.modC1,
+    modC1 = calculateModC1StatsFull( modBands );
+    df = stats.modC1 - modC1;
+    snr.modC1 = 20*log10(rms(df(:)) / rms(stats.modC1(:)));
+
+    if verbose > 0,
+        disp(['C1: ' num2str(snr.modC1, '%.3f ') ' dB']);
+    end
+end
+
 if imposeParams.modC1Analytic,
     modC1Analytic = calculateModC1AnalyticStatsFull( modBands );
     df = stats.modC1Analytic - modC1Analytic;

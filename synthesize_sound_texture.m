@@ -2,7 +2,7 @@
 clear all; clc; close all;
 
 % Load toolkit
-addpath('toolkit/');
+addpath('sttb/');
 setupToolkit();
 
 %
@@ -15,7 +15,7 @@ analysis_parameters;
 synthesis_parameters;
 
 %% Load stats
-statsFolder = '~/Temp/usertest/stats/';
+statsFolder = '~/Temp/stats/';
 
 files = {...
     'rain', 'train', 'bees', 'wind', 'drills' ... % 5

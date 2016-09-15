@@ -2,7 +2,7 @@
 clear all; clc; close all;
 
 % Load toolkit
-addpath('toolkit/');
+addpath('sttb/');
 setupToolkit();
 
 %

@@ -1,6 +1,12 @@
 function signal = collapseSubbands( subbands, filts )
+%collapseSubbands    Merges subbands with the given filters.
 %
-% Merges subbands with the given filters.
+% Parameters:
+% subbands - A multiband signal
+% filt - The filterbank
+%
+% Returns:
+% signal - The single channel signal. 
 % 
 % From McDermott et al.
 %

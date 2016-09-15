@@ -2,7 +2,7 @@
 clear all; clc; close all;
 
 % Load toolkit
-addpath('toolkit/');
+addpath('sttb/');
 setupToolkit(0);
 
 %
@@ -15,20 +15,30 @@ outputFolder = '~/Temp/usertest/output/';
 analysis_parameters;
 synthesis_parameters;
 
+synthParams.nIterations = 30;
+
 %% Load stats
 statsFolder = '~/Temp/usertest/stats/';
 
 files = {...
-    'rain', 'train', 'bees', 'wind', 'drills' ... % 5
+    'drills' ... % 5
     'applause', 'bubbles', 'babble', 'stream', 'fire', ... % 10
-    'swamp', 'gravel', 'helicopter', 'glass_chimes', 'windchimes', ... % 15
-    'glass_shards', 'tuning', 'violin', 'scary', 'scary2', ... % 20
-    'guitar_sample', 'guitar_clean_1', 'guitar_clean_2', 'guitar_dist_2', 'guitar_dist_3'... % 25
-    'ride_low', 'ride_hi', 'drumroll_1', 'drumroll_2', 'purring'...
+    'swamp', 'helicopter', 'glass_chimes', ... % 15
+    'glass_shards', 'violin', 'scary', ... % 20
+    'guitar_sample', 'guitar_clean_1', 'guitar_dist_3',... % 25
+    'drumroll_1', 'drumroll_2'...
     };
+% files = {...
+%     'rain', 'train', 'bees', 'wind', 'drills' ... % 5
+%     'applause', 'bubbles', 'babble', 'stream', 'fire', ... % 10
+%     'swamp', 'gravel', 'helicopter', 'glass_chimes', 'windchimes', ... % 15
+%     'glass_shards', 'tuning', 'violin', 'scary', 'scary2', ... % 20
+%     'guitar_sample', 'guitar_clean_1', 'guitar_clean_2', 'guitar_dist_2', 'guitar_dist_3'... % 25
+%     'ride_low', 'ride_hi', 'drumroll_1', 'drumroll_2'...
+%     };
 nFiles = length(files);
 
-for iFile = nFiles,
+for iFile = 2,
     
 disp( ['Loading stats for ' files{iFile}] );
 
@@ -66,7 +76,8 @@ synthSubbands = restoreSubbands( synthEnvs, synthResiduals, ...
     filterBundle.window, analysisParams.compression );
 
 % equalize subbands
-synthSubbandsAdj = adjustSubbands( synthSubbands, stats.subbandVars );
+synthSubbandsAdj = synthSubbands;
+% synthSubbandsAdj = adjustSubbands( synthSubbands, stats.subbandVars );
 
 % merge subbands
 x = collapseSubbands( synthSubbandsAdj, filterBundle.audioFilters );
@@ -92,7 +103,8 @@ synthSubbands = restoreSubbands( envsMSA, synthResiduals, ...
     filterBundle.window, analysisParams.compression );
 
 % equalize subbands
-synthSubbandsAdj = adjustSubbands( synthSubbands, stats.subbandVars );
+synthSubbandsAdj = synthSubbands;
+% synthSubbandsAdj = adjustSubbands( synthSubbands, stats.subbandVars );
 
 % merge subbands
 x = collapseSubbands( synthSubbandsAdj, filterBundle.audioFilters );

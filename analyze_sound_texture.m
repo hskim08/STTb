@@ -2,13 +2,16 @@
 clear all; clc; close all;
 
 % Load toolkit
-addpath('toolkit/');
+addpath('sttb/');
 setupToolkit();
 
 %
 % In this script, the sound texture statistics are extracted then 
 % visualized explicitly from an audio file.
 %
+
+% output folder to save stats
+outputFolder = '~/Temp/stats/';
 
 %% Load audio parameters
 audioFolder = '../toolkit/Example_Textures/';
@@ -148,14 +151,43 @@ modSpectra = modSpectra(1:nMods, :, :);
 
 stats.modSpectraAmps = mean(abs(modSpectra), 3); % get average amplitude
 
-% plot
+
+%% plot
 figure(2);
 plotModSpecAmps( stats.modSpectraAmps, env_sr );
 
 
 %%
+% Modulation Power
+%
+stats.modPower = zeros(nSubbands, nModbands);
+for iSubband = 1:nSubbands, % for each subband
+    
+    cursub = subbandEnvs(:, iSubband);
+    
+    % subband envelope statistics 
+    moments = calculateMoments( cursub );
+    
+    % subband modulation power
+    stats.modPower( iSubband, : ) = calculateModPowerStats( squeeze(modbands(:, iSubband, :)), moments );
+end
+
+% plot
+figure(3);
+plotModPowerStats( stats.modPower );
+
+
+%%
 % Between subband (C1) modulation correlations
 %
+
+% Direct correlation
+stats.modC1 = calculateModC1StatsFull( modbands );
+
+% plot
+figure(4);
+plotModC1Stats( stats.modC1, centerFreqs );
+
 
 % Analytic signal correlation
 stats.modC1Analytic = calculateModC1AnalyticStatsFull( modbands );
@@ -191,3 +223,13 @@ end
 % plot
 figure(8);
 plotModC2AmpStats( stats.modC2Amp );
+
+
+
+%% 
+% Save statistics to file
+%
+
+outFile = [outputFolder files{iFile} '.mat'];
+disp(['Saving to: ' outFile]);
+save(outFile, 'stats');

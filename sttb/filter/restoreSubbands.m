@@ -1,7 +1,16 @@
 function synthSubbands = restoreSubbands( subbandEnvs, ...
     subbandResiduals, win, compressionOptions )
+%restoreSubbands    Restores the subbands from subband envelopes and 
+% residuals.
 %
-% Restores the subbands from subband envelopes and residuals.
+% Parameters:
+% subbandEnvs - A single channel signal
+% subbandResiduals - A single filter in the frequency domain
+% win - The temporal window
+% compressionOptions - Compression options
+%
+% Returns:
+% synthSubbands - The synthesized subbands. 
 %
 
 [winLength, nFrames, nSubbands] = size(subbandResiduals);

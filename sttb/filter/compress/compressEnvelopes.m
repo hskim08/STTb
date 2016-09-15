@@ -1,6 +1,12 @@
 function compEnvs = compressEnvelopes( envs, compressionOptions )
+%compressEnvelopes    Compresses envelopes.
 %
-% compresses envelopes
+% Parameters:
+% envs - Subband envelopes
+% compressionOptions - Compression options
+%
+% Returns:
+% compEnvs - The compresed envelopes.  
 %
 
 if compressionOptions.type == 1, % power compression

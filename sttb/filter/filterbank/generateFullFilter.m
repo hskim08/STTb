@@ -1,4 +1,13 @@
 function fullFilter = generateFullFilter( filts, signalLength )
+%generateFullFilter     Generates the fullband filter
+%
+% Parameters:
+% filts - The half band filters. This can be a filterbank. Expects the
+% filters to be real in the frequency domain.
+% signalLength - The length of the signal.
+%
+% Returns:
+% fullFilter - The fullband signal. 
 %
 % Expands the positive half filter by generating the negative frequencies.
 %

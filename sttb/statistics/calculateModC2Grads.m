@@ -53,13 +53,13 @@ f2 = ff2 .* b_n;
 f3 = ff1 .* b_n_hat;
 f4 = ff2 .* b_n_hat;
 
-real_dv11 = applyFilter( h_m, f1 ) ... % 
-    + hiltrans( applyFilter( h_m, f2 ) );
-imag_dv11 = applyFilter( h_m, f3 ) ... % 
-    + hiltrans( applyFilter( h_m, f4 ) );
+real_dv11 = applyFilter( f1, h_m ) ... % 
+    + hiltrans( applyFilter( f2, h_m ) );
+imag_dv11 = applyFilter( f3, h_m ) ... % 
+    + hiltrans( applyFilter( f4, h_m ) );
 
 % part 1-2
-dmRhn = applyFilter( h_n, d_mR ); 
+dmRhn = applyFilter( d_mR, h_n ); 
 real_dv12 = dmRhn; 
 imag_dv12 = -hiltrans( dmRhn ); 
 
@@ -88,13 +88,13 @@ g2 = gg2 .* b_n_hat;
 g3 = gg1 .* b_n;
 g4 = gg1 .* b_n;
 
-real_dv21 = applyFilter( h_m, g1 )... % 
-    + hiltrans( applyFilter( h_m, g2 ) );
-imag_dv21 = applyFilter( h_m, g3 ) ... % 
-    + hiltrans( applyFilter( h_m, g4 ) );
+real_dv21 = applyFilter( g1, h_m )... % 
+    + hiltrans( applyFilter( g2, h_m ) );
+imag_dv21 = applyFilter( g3, h_m ) ... % 
+    + hiltrans( applyFilter( g4, h_m ) );
 
 % part 2-2
-dmIhn = applyFilter( h_n, d_mI ); 
+dmIhn = applyFilter( d_mI, h_n ); 
 real_dv22 = -hiltrans( dmIhn ); 
 imag_dv22 = dmIhn;
 

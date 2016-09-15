@@ -1,6 +1,12 @@
 function modbands = generateModbands( envs, filts )
+%generateModbands    Generates modulation bands.
 %
-% Generates modulation bands
+% Parameters:
+% envs - Subband envelopes
+% filts - The modulation filterbank
+%
+% Returns:
+% modbands - The modulation band signals. 
 %
 
 [nFrames, nSubbands] = size(envs);

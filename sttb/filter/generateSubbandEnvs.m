@@ -1,18 +1,16 @@
 function [subbandEnvs, subbandResiduals] = generateSubbandEnvs( subbands, ...
     win, compressionOptions )
-%
-% Generates envelopes from subbands by calculating power of windowed
-% segments.
+%generateSubbandEnvs    Generates envelopes from subbands by calculating 
+% power of windowed segments.
 %
 % Parameters:
-%   subbands - the subband signals. each column is a subband
-%   audio_sr - the audio sampling rate
-%   env_sr - the envelope sampling rate aka the frame rate
-%   compression_options - the compression options
+% subbands - the subband signals. each column is a subband
+% win - the temporal window
+% compressionOptions - the compression options
 %
 % Returns:
-%   subbandEnvs - the subband envelopes
-%   subband_wins - the windowed signal normalized by power
+% subbandEnvs - the subband envelopes
+% subbandResiduals - the subband residuals
 %
 
 verySmallValue = 10^-12; % to prevent divide by zero

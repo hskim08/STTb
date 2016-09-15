@@ -1,10 +1,16 @@
-function subband = applyFilter( filt, s )
+function out = applyFilter( signal, filt )
+%applyFilter    Applies filter to signal.
 %
-% Applies filter to signal
+% Parameters:
+% signal - A single channel signal
+% filt - A single filter in the frequency domain
+%
+% Returns:
+% out - The filtered signal. 
 %
 
-s = s(:); % turn into column vector
+s = signal(:); % turn into column vector
 
-fft_subband = filt .* fft(s); % fft and filter
-subband = real( ifft(fft_subband) ); % ifft, remove noise
+fftFilt = filt .* fft(s); % fft and filter
+out = real( ifft(fftFilt) ); % ifft, remove noise
 

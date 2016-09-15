@@ -15,6 +15,8 @@ outputFolder = '~/Temp/usertest/output/';
 analysis_parameters;
 synthesis_parameters;
 
+synthParams.nIterations = 30;
+
 imposeParams = synthParams.impose;
 imposeParams.modPower = 0;
 imposeParams.modC1 = 1;

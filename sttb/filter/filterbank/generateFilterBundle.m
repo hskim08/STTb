@@ -1,6 +1,13 @@
 function filterBundle = generateFilterBundle( analysisParams, nSamples, nFrames )
+%generateFilterBundle    Generates the filters for audio analysis.
 %
-% Generates the filters for audio analysis.
+% Parameters:
+% analysisParams - The analysis parameters
+% nSamples - The total number of samples
+% nFrames - The total number of frames
+%
+% Returns:
+% filterBundle - The filter bundle. A struct containing all the filters.
 %
 
 %
