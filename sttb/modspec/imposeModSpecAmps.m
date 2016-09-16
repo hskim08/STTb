@@ -1,6 +1,13 @@
 function newEnvs = imposeModSpecAmps( envs, modSpectraAmps )
+%imposeModSpecAmps    Imposes the modulation spectra amplitude onto the 
+% subband envelopes.
 %
-% Imposes the modulation spectra amplitude onto the subband envelopes.
+% Parameters:
+% envs - The subband envelopes
+% modSpectraAmps - The modulation spectra amplitudes
+%
+% Returns:
+% newEnvs - The new subband envelopes
 %
 
 nMods = size(modSpectraAmps, 1);

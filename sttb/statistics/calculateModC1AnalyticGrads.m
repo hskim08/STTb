@@ -3,6 +3,7 @@ function [grad_r, grad_i] = calculateModC1AnalyticGrads( bs, br, hbs, hbr, ...
 %
 % Calculates the gradient for C1 correlation using analytic signals
 %
+% See also getCostAndGradient
 
 nFrames = length(bs);
 wi = 1/nFrames;

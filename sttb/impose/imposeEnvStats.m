@@ -1,7 +1,22 @@
 function [newEnvs, snr, errorLog] = imposeEnvStats( envs, stats, imposeParams, filters, ...
     c1Offsets, c2AmpOffsets, analysisParams, searchParams, iteration, verbose )
+%imposeEnvStats    Impose target statistics to the current envelope.
 %
-% Impose target statistics to the current envelope.
+% Parameters:
+% envs - The subband envelopes
+% stats - The target statistics
+% imposeParams - The impose parameters
+% filters - The filter bundle
+% c1Offsets - The C1 offsets to use
+% c2AmpOffsets - The offsets to use for the C2 amplitude imposing
+% analysisParams - The analysis parameters
+% searchParams - The search parameters
+% iteration - The number of iterations to run
+% verbose - The verbosity level
+% 
+% Returns:
+% cost - The cost (errors)
+% grad - The gradients
 %
 
 if ~exist('verbose', 'var'),
@@ -43,8 +58,8 @@ for iSubOrder = 1:nSubOrders, % run through the subbands
     end
     
     % prepare for modC1
-        if imposeParams.modC1 ...
-            || imposeParams.modC1Analytic, 
+    if imposeParams.modC1 ...
+        || imposeParams.modC1Analytic, 
         % correlations to be enforced
         potentialBands = c1Offsets + iSubband; 
         modC1BandsToUse = getBandsToUse(iSubOrder, potentialBands, subOrder);

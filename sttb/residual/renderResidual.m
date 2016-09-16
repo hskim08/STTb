@@ -1,6 +1,13 @@
 function residuals = renderResidual( subbandResiduals, win, audioFilters )
+%renderResidual    Renders the residual stack into audio.
 %
-% Renders the residual stack into audio
+% Parameters:
+% subbandResiduals - The subband residuals
+% win - The temporal window
+% audioFilters - The audio filterbank
+%
+% Returns:
+% residuals - The residual signal (single channel).
 %
 
 [nWin, nFrames, nChannels] = size(subbandResiduals);

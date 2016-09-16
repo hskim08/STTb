@@ -2,7 +2,8 @@ function tfStack = stackOLA2(tf, nClipSamples, nStep)
 %
 % OLA stacking for time-frequency representations.
 % Note: this function will zero pad the ends if necessary.
-%
+% 
+%   Author(s): H.S. Kim, 9-15-16
 
 [nSamples, nSubbands] = size(tf);
 

@@ -10,7 +10,8 @@ function x = pressOLAStack(X, shift, overlap)
 %
 % Returns
 % x - the rendered signal
-%
+% 
+%   Author(s): H.S. Kim, 9-15-16
 
 % handle input options
 if ~exist('shift', 'var'),

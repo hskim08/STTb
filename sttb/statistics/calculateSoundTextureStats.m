@@ -1,5 +1,21 @@
 function stats = calculateSoundTextureStats( subbandEnvs, residuals, ...
     modbands, modbandsC2, analysisParams )
+%calculateSoundTextureStats    Calculates the texture statistics.
+%
+% Parameters:
+% subbandEnvs - The subband envelopes
+% residuals - The residual signal
+% modbands - The modulation bands
+% modbandsC2 - The modulations bands for C2
+% analysisParams - The analysis parameters
+%
+% Returns:
+% stats - The sound texture statistics. 
+%
+% This is a convenience function that calculates all sound texture
+% statistics needed for synthesis.
+% 
+
 
 %
 % Residuals

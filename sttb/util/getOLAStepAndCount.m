@@ -1,7 +1,8 @@
 function [step, count] = getOLAStepAndCount(n, nw, overlap)
 %
 % Returns the step size and frame count
-%
+% 
+%   Author(s): H.S. Kim, 9-15-16
 
 % TODO: display error if overlap > nw
 

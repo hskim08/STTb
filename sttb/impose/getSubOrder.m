@@ -1,6 +1,12 @@
-function subOrder = getSubOrder(startSub, nSubbands)
+function subOrder = getSubOrder( startSub, nSubbands )
+%getSubOrder    Decides the subband imposition order.
 %
-% Decides the subband imposition order
+% Parameters:
+% startSub - The starting subband index
+% nSubbands - The number of subbands
+%
+% Returns:
+% subOrder - The subband imposition order
 %
 
 subOrder = startSub;

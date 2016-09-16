@@ -15,9 +15,6 @@ function [filts,centerFreqs,freqs] = makeOctaveBandFilters( signalLength, sample
 % centerFreqs - The center frequencies.
 % freqs - The frequencies for each filter point.
 % 
-% 
-% 
-% 
 % From McDermott et al.
 % 
 

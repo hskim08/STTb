@@ -10,7 +10,8 @@ function div = diverge(type, n, gamma)
 %   colormap(diverge('rwb'));
 %   colormap(diverge('rwb', 100));
 %   colormap(diverge('rwb', 100, 1.7));
-%
+% 
+%   Author(s): H.S. Kim, 9-15-16
 
 if ~exist('type', 'var') || isempty(type),
     type = 'rwb';

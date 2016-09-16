@@ -1,6 +1,6 @@
 function y = hiltrans(x)
-%
-% The Hilbert Transform 
+%hiltrans    The Hilbert Transform 
+% 
 % imaginary part of the analytic signal
 % Function added to increase legibility
 %

@@ -4,6 +4,8 @@ function writeAudioFile(x, fs, filename)
 % This code will automatically choose between audiowrite and wavwrite based
 % on the Matlab version.
 %
+% 
+%   Author(s): H.S. Kim, 9-15-16
 
 if str2double(strtok(version(), '.')) > 7,    
     audiowrite(filename, x, fs);

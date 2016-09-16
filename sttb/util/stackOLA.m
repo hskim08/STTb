@@ -10,7 +10,8 @@ function X = stackOLA(x, nw, overlap, offsets)
 %
 % Returns
 % X - the unwindowed overlap-add stack
-%
+% 
+%   Author(s): H.S. Kim, 9-15-16
 
 if ~exist('overlap', 'var'),
     overlap = 0.5;

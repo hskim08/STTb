@@ -4,9 +4,12 @@ function origSound = loadSound( sourceParams, audio_sr, nSamples )
 % rate, length and RMS level of the audio.
 %
 % Parameters:
-%
+% sourceParams - The source parameters
+% audio_sr - The audio sampling rate
+% nSamples - The number of samples to load
+% 
 % Returns:
-%
+% origSound - single channel audio
 %
 
 if str2double(strtok(version(), '.')) > 7, % newer audio load function

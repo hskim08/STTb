@@ -1,8 +1,23 @@
 function [cost, grad] = getCostAndGradient( currentSubbandEnv, ...
     stats, imposeParams, filters, currentSubband, modC1BandsToUse, c2AmpOffsets, ...
     modBands, modBandsFiltered )
+%getCostAndGradient    Calculates the cost and gradient for minimization.
 %
-% Calculates the cost and gradient for minimization.
+% Parameters:
+% currentSubbandEnv - The subband envelope currently being optimized
+% stats - The target statistics
+% imposeParams - The impose parameters
+% filters - The filter bundle.
+% currentSubband - The current subband number
+% modC1BandsToUse - The between subbands to use for C1 imposing
+% c2AmpOffsets - The offsets to use for the C2 amplitude imposing
+% modBands - The precalculated modulation bands. (For performance speed up)
+% modBandsFiltered - The precalculated filtered modulation bands. (For 
+%   performance speed up)
+% 
+% Returns:
+% cost - The cost (errors)
+% grad - The gradients
 %
 
 %

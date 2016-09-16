@@ -1,6 +1,15 @@
 function idx_bundle = getSigSubs( target_stats, offsets, snr_params )
+%getSigSubs    Returns a struct containing indices of channels to include.
 %
-% Returns a struct containing indices of channels to include
+% Parameters:
+% target_stats - A single channel signal
+% offsets - A single filter in the frequency domain
+% snr_params
+%
+% Returns:
+% idx_bundle - The indices to use. 
+% 
+% TODO: This is not used. Delete the file.
 %
 
 % compute error including only subbands with significant power

@@ -1,7 +1,26 @@
 function [newEnvs, snrs, iterEnvs, envsMSA, envs] = synthesizeEnvelopes( synthSound, stats, ...
     synthParams, analysisParams, filterBundle )
+%synthesizeEnvelopes    Synthesizes sound texture envelopes from sound 
+% texture statistics.
 %
-% Synthesizes sound texture envelopes from sound texture statistics.
+% Parameters:
+% synthSound - The input sound
+% stats - The target statistics
+% synthParams - The synthesis parameters
+% analysisParams - The analysis parameters
+% filterBundle - The filter bundle
+%
+% Returns:
+% newEnvs - The synthesized envelope
+% snrs - The SNR of the errors.
+% iterEnvs - (Optional) The envelopes after phase imposing without post 
+%   modulation spectra amplitudes imposed. For comparison purposes.
+% envsMSA - (Optional) The envelopes with only modulation spectra 
+%   amplitudes imposed. For comparison purposes.
+% envs - The pre-imposed envelopes. For comparison purposes.
+%
+% This is a convenience function that handles the full process of
+% synthesizings the envelopes.
 %
 
 % generate subbands
