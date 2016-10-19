@@ -12,18 +12,14 @@ setupToolkit();
 
 %% Load audio parameters
 
-audioFolder = '../toolkit/Example_Textures/';
+audioFolder = 'examples/';
 
 files = {...
-    'rain', 'train', 'bees', 'wind', 'drills' ... % 5
-    'applause', 'bubbles', 'babble', 'stream', 'fire', ... % 10
-    'swamp', 'gravel', 'helicopter', 'glass_chimes', 'windchimes', ... % 15
-    'glass_shards', 'tuning', 'violin', 'scary', 'scary2', ... % 20
-    'guitar_sample', 'guitar_clean_1', 'guitar_clean_2', 'guitar_dist_2', 'guitar_dist_3'... % 25
-    'ride_low', 'ride_hi', 'drumroll_1', 'drumroll_2', ...
+    'applause', 'drills', 'stream', 'guitar', 'scary', ...
+    'violin' ...
     };
 
-iFile = 19;
+iFile = 1;
 disp( ['Loading ' files{iFile}] );
 
 % create source parameter struct
@@ -56,7 +52,7 @@ stats = calculateSoundTextureStats( subbandEnvs, residuals, ...
 
 
 %% Save stats to file
-outputFolder = '~/Temp/stats/';
+outputFolder = 'outputs/stats/';
 outFile = [outputFolder files{iFile} '.mat'];
 disp(['Saving to: ' outFile]);
 save(outFile, 'stats');

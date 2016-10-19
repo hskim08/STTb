@@ -6,36 +6,25 @@ addpath('sttb/');
 setupToolkit();
 
 %
-% In this script, the sound texture statistics are extracted then 
-% saved to a folder.
+% In this script, the sound texture statistics are extracted then saved to 
+% a folder.
 %
 
 % Load analysis parameters
 analysis_parameters;
 
 % Output folder
-outputFolder = '~/Temp/usertest/stats/';
+outputFolder = 'outputs/stats/';
 
 
 %% Load audio parameters
-audioFolder = '../toolkit/Example_Textures/';
+audioFolder = 'examples/';
 
 files = {...
-    'drills' ... % 5
-    'applause', 'bubbles', 'babble', 'stream', 'fire', ... % 10
-    'swamp', 'helicopter', 'glass_chimes', ... % 15
-    'glass_shards', 'violin', 'scary', ... % 20
-    'guitar_sample', 'guitar_clean_1', 'guitar_dist_3',... % 25
-    'drumroll_1', 'drumroll_2'...
+    'applause', 'drills', 'stream', 'guitar', 'scary', ...
+    'violin' ... 
     };
-% files = {...
-%     'rain', 'train', 'bees', 'wind', 'drills' ... % 5
-%     'applause', 'bubbles', 'babble', 'stream', 'fire', ... % 10
-%     'swamp', 'gravel', 'helicopter', 'glass_chimes', 'windchimes', ... % 15
-%     'glass_shards', 'tuning', 'violin', 'scary', 'scary2', ... % 20
-%     'guitar_sample', 'guitar_clean_1', 'guitar_clean_2', 'guitar_dist_2', 'guitar_dist_3'... % 25
-%     'ride_low', 'ride_hi', 'drumroll_1', 'drumroll_2', 'purring', ...
-%     };
+
 nFiles = length(files);
 
 for iFile = 1:nFiles,
@@ -68,5 +57,4 @@ for iFile = 1:nFiles,
     outFile = [outputFolder files{iFile} '.mat'];
     disp(['Saving to: ' outFile]);
     save(outFile, 'stats');
-
 end

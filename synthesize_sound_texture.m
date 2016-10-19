@@ -15,25 +15,21 @@ analysis_parameters;
 synthesis_parameters;
 
 %% Load stats
-statsFolder = '~/Temp/stats/';
+statsFolder = 'outputs/stats/';
 
 files = {...
-    'rain', 'train', 'bees', 'wind', 'drills' ... % 5
-    'applause', 'bubbles', 'babble', 'stream', 'fire', ... % 10
-    'swamp', 'gravel', 'helicopter', 'glass_chimes', 'windchimes', ... % 15
-    'glass_shards', 'tuning', 'violin', 'scary', 'scary2', ... % 20
-    'guitar_sample', 'guitar_clean_1', 'guitar_clean_2', 'guitar_dist_2', 'guitar_dist_3'... % 25
-    'ride_low', 'ride_hi', 'drumroll_1', 'drumroll_2', ...
+    'applause', 'drills', 'stream', 'guitar', 'scary', ...
+    'violin' ...
     };
 
-iFile = 19;
+iFile = 1;
 disp( ['Loading stats for ' files{iFile}] );
 
 load([statsFolder files{iFile} '.mat']);
 
 % create output parameter struct
 outputParams.desiredRMS = .01;
-outputParams.outputFolder = '~/Temp/usertest/output/';
+outputParams.outputFolder = 'outputs/audio/';
 
 
 %% Get constants
