@@ -4,9 +4,9 @@
 Copyright (c), 2016 Hyung-Suk Kim
 CCRMA, Stanford University
 All rights reserved.
-http://ccrma.stanford.edu/~hskim08/sttr/harmonize/
+http://ccrma.stanford.edu/~hskim08/soundtexture/
 
-Sound Texture Toolbox (SSTB) is distributed under the following BSD style 
+Sound Texture Toolbox (STTb) is distributed under the following BSD style 
 open source license:
 
 Permission is hereby granted, free of charge, to any person obtaining a
@@ -17,8 +17,8 @@ distribute, sublicense, and/or sell copies of the Software, and to
 permit persons to whom the Software is furnished to do so, subject to
 the following conditions:
 
-The authors encourage users of STTB to include this copyright notice,
-and to let us know that you are using STTB. Any person wishing to
+The authors encourage users of STTb to include this copyright notice,
+and to let us know that you are using STTb. Any person wishing to
 distribute modifications to the Software is encouraged to send the
 modifications to the original authors so that they can be incorporated
 into the canonical version.
