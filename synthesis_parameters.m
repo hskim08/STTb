@@ -19,12 +19,12 @@ synthParams.impose.modC2Amp = 1;
     
 
 % stats calculation parameters
-synthParams.modC1Offsets = 1:5; % don't use all parameters, only use the following offsets.
+synthParams.modC1Offsets = 1:5; % don't use all correlations, only use the following offsets.
 synthParams.modC2AmpOffsets = 8;
 
 
 % synthesis loop
-synthParams.nIterations = 3; % max number of iterations of synthesis loop
+synthParams.nIterations = 10; % max number of iterations of synthesis loop
 
 synthParams.search.startCount = 10; % start with 10 searches
 synthParams.search.maxCount = 30; % maximum of 30 searches

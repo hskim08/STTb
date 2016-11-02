@@ -28,18 +28,16 @@ analysisParams.filter.audio.nChannels = 30; % this is the number excluding lowpa
 analysisParams.filter.audio.lowCutoff = 20; % Hz - low frequency cutoff
 
 % modulation filterbank
-% TODO: cleanup the parameters
 analysisParams.filter.modulation.nChannels = 20; % These next four parameters control the modulation filterbank from which modulation power is measured
 analysisParams.filter.modulation.lowCutoff = 0.5; % Hz
 analysisParams.filter.modulation.Qfactor = 2; % for modulation filters
 
 analysisParams.filter.modulation.lowCutoffC2 = 0.5; % Hz - this is the lowest frequency in the octave-spaced modulation filterbank used for the C1 and C2 correlations
 
-
-% residual parameters
-analysisParams.residual.lpcOrder = 200;
-
-
 % modulation spectra parameters
 analysisParams.modspectra.block = 4; % analysis block(window) size in seconds
 analysisParams.modspectra.step = 0.5; % analysis step size in seconds
+
+
+% residual parameters
+analysisParams.residual.lpcOrder = 200;
