@@ -4,7 +4,7 @@
 Copyright (c), 2016 Hyung-Suk Kim
 CCRMA, Stanford University
 All rights reserved.
-http://ccrma.stanford.edu/~hskim08/soundtexture/
+http://ccrma.stanford.edu/~hskim08/soundtextures/
 
 Sound Texture Toolbox (STTb) is distributed under the following BSD style 
 open source license:
