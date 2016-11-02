@@ -1,4 +1,4 @@
-Sound Texture Toolbox (STTB) Coding Style Guide
+Sound Texture Toolbox (STTb) Coding Style Guide
 ===
 
 The objective of the coding style guide is to make the code legible. Code should not look like a huge block of random letters. I believe well written code should have an ebb and flow that naturally visualizes the structure of the code written, even if it is Matlab code.
@@ -92,5 +92,3 @@ function o = addForYou(i1, i2)
 o = i1 + i2;
 ~~~~
 
-
-## Comments
